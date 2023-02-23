@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:my_responsive_resume/constants.dart';
 import 'package:my_responsive_resume/homepage.dart';
 
 void main() {
@@ -13,19 +15,37 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Anh Huynh\'s Resume',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
+      theme: ThemeData.light().copyWith(
+        primaryColor: CustomTheme.primaryColor,
+        colorScheme: ColorScheme.light(
+          primary: CustomTheme.primaryColor,
+          primaryContainer: CustomTheme.primaryBackground,
+          secondary: CustomTheme.secondaryColor,
+          secondaryContainer: CustomTheme.secondaryBackground,
+        ),
+        iconTheme: IconThemeData(size: 16, color: CustomTheme.primaryText),
+        // colorScheme: ColorScheme(
+        //     brightness: Brightness.light,
+        //     primary: CustomTheme.primaryColor,
+        //     onPrimary: CustomTheme.primaryText,
+        //     secondary: CustomTheme.secondaryColor,
+        //     onSecondary: CustomTheme.secondaryText,
+        //     error: Colors.redAccent,
+        //     onError: Colors.white,
+        //     background: CustomTheme.primaryBackground,
+        //     onBackground: CustomTheme.primaryText,
+        //     surface: CustomTheme.secondaryBackground,
+        //     onSurface: CustomTheme.secondaryText),
+        textTheme: GoogleFonts.archivoTextTheme()
+            .copyWith(
+              bodyMedium: const TextStyle(fontSize: 15.0),
+            )
+            .apply(
+              bodyColor: CustomTheme.primaryText,
+              displayColor: CustomTheme.primaryText,
+            ),
       ),
-      home: Homepage(),
+      home: const Homepage(),
     );
   }
 }

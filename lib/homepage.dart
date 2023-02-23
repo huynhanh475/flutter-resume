@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_responsive_resume/constants.dart';
-import 'package:my_responsive_resume/views/contact_card.dart';
+
+import 'contact-card/contact_card.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -33,8 +34,8 @@ class _HomepageState extends State<Homepage> {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-            CustomTheme().primaryColor,
-            CustomTheme().secondaryColor,
+            CustomTheme.primaryColor,
+            CustomTheme.secondaryColor,
           ])),
       child: Scaffold(
         backgroundColor: Colors.transparent,
@@ -66,8 +67,7 @@ class _HomepageState extends State<Homepage> {
                             width: 900,
                             height: 160,
                             decoration: BoxDecoration(
-                              color:
-                                  CustomTheme().secondaryText.withOpacity(0.3),
+                              color: CustomTheme.secondaryText.withOpacity(0.3),
                               borderRadius: BorderRadius.only(
                                 topLeft:
                                     Radius.circular(CustomTheme.borderRadius),
@@ -99,8 +99,7 @@ class _HomepageState extends State<Homepage> {
                             width: 900,
                             height: 500,
                             decoration: BoxDecoration(
-                              color:
-                                  CustomTheme().secondaryText.withOpacity(0.3),
+                              color: CustomTheme.secondaryText.withOpacity(0.3),
                               borderRadius: BorderRadius.only(
                                 topLeft:
                                     Radius.circular(CustomTheme.borderRadius),

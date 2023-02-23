@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:my_responsive_resume/views/avatar.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:my_responsive_resume/contact-card/widgets/position_badge.dart';
+import 'package:my_responsive_resume/contact-card/widgets/avatar.dart';
 
-import '../constants.dart';
+import '../../constants.dart';
+import 'widgets/contact_links.dart';
+import 'widgets/name_text.dart';
 
 class ContactCard extends StatelessWidget {
   const ContactCard({Key? key, required this.scrollOffset}) : super(key: key);
@@ -36,9 +40,9 @@ class ContactCard extends StatelessWidget {
                       height: CustomTheme.imageSize / 2 +
                           handleOffset(scrollOffset),
                     ),
-                    Text(
-                      verticalFlag.toString(),
-                    ),
+                    const NameText(),
+                    const PositionBadge(),
+                    const ContactLinks(),
                   ],
                 ),
               ),
@@ -47,13 +51,20 @@ class ContactCard extends StatelessWidget {
               width: 250,
               height: 200,
               decoration: BoxDecoration(
-                color: CustomTheme().secondaryText.withOpacity(0.3),
-                borderRadius: BorderRadius.only(
+                color: Theme.of(context).colorScheme.secondaryContainer,
+                borderRadius: const BorderRadius.only(
                   bottomLeft: Radius.circular(CustomTheme.borderRadius),
                   bottomRight: Radius.circular(CustomTheme.borderRadius),
                 ),
               ),
-              child: Text("Lower"),
+              child: Padding(
+                padding: const EdgeInsets.all(CustomTheme.padding),
+                child: Column(
+                  children: [
+                    Text("Lower"),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
