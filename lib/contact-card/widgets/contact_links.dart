@@ -15,7 +15,7 @@ class ContactLinks extends StatelessWidget {
             iconData: FontAwesomeIcons.github,
             url: "https://github.com/huynhanh475"),
         SizedBox(
-          width: CustomTheme.padding / 4,
+          width: CustomTheme.padding,
         ),
         SocialIcon(
           iconData: FontAwesomeIcons.linkedinIn,

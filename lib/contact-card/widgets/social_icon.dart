@@ -11,7 +11,7 @@ class SocialIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       hoverColor: Theme.of(context).primaryColor,
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(0),
       constraints: const BoxConstraints(), // Remove default large padding
       onPressed: handleIconPressed,
       icon: Icon(iconData),

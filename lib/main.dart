@@ -36,9 +36,12 @@ class MyApp extends StatelessWidget {
         //     onBackground: CustomTheme.primaryText,
         //     surface: CustomTheme.secondaryBackground,
         //     onSurface: CustomTheme.secondaryText),
+        shadowColor: CustomTheme.shadowColor,
         textTheme: GoogleFonts.archivoTextTheme()
             .copyWith(
-              bodyMedium: const TextStyle(fontSize: 15.0),
+              bodyMedium: const TextStyle(
+                fontSize: 15.0,
+              ),
             )
             .apply(
               bodyColor: CustomTheme.primaryText,

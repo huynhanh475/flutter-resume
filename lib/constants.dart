@@ -11,6 +11,8 @@ class CustomTheme {
   // static Color primaryText = const Color(0xFF15114E);
   static Color primaryText = const Color(0xFF44566C);
   static Color secondaryText = const Color(0xFF555F6F);
+
+  static Color shadowColor = const Color(0xff677680).withOpacity(0.1);
   // late Color primaryBtnText = Color(0xFFFFFFFF);
   // late Color lineColor = Color(0xFFE0E3E7);
   // late Color grayIcon = Color(0xFF95A1AC);
@@ -26,7 +28,7 @@ class CustomTheme {
 }
 
 final kFirstNameTextStyle = GoogleFonts.merriweather(
-  textStyle: const TextStyle(fontWeight: FontWeight.w100, fontSize: 30.0),
+  textStyle: const TextStyle(fontSize: 30.0),
 );
 
 final kLastNameTextStyle = GoogleFonts.merriweather(

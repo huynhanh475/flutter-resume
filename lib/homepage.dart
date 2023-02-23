@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_responsive_resume/constants.dart';
+import 'package:my_responsive_resume/main-content/main_content.dart';
 
 import 'contact-card/contact_card.dart';
 
@@ -51,70 +52,7 @@ class _HomepageState extends State<Homepage> {
                 width: CustomTheme.padding * 2,
               ),
               // Main content
-              ScrollConfiguration(
-                behavior:
-                    ScrollConfiguration.of(context).copyWith(scrollbars: false),
-                child: SingleChildScrollView(
-                  padding: EdgeInsets.symmetric(vertical: 160.0),
-                  controller: _scrollController,
-                  primary: false,
-                  child: Row(
-                    children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Container(
-                            width: 900,
-                            height: 160,
-                            decoration: BoxDecoration(
-                              color: CustomTheme.secondaryText.withOpacity(0.3),
-                              borderRadius: BorderRadius.only(
-                                topLeft:
-                                    Radius.circular(CustomTheme.borderRadius),
-                                topRight:
-                                    Radius.circular(CustomTheme.borderRadius),
-                              ),
-                            ),
-                            child: Text("Lower"),
-                          ),
-                          Container(
-                            width: 900,
-                            height: 500,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.only(
-                                topLeft:
-                                    Radius.circular(CustomTheme.borderRadius),
-                                topRight:
-                                    Radius.circular(CustomTheme.borderRadius),
-                              ),
-                            ),
-                            child: Center(
-                              child: Text(_scrollController.hasClients
-                                  ? _scrollController.offset.toString()
-                                  : "0"),
-                            ),
-                          ),
-                          Container(
-                            width: 900,
-                            height: 500,
-                            decoration: BoxDecoration(
-                              color: CustomTheme.secondaryText.withOpacity(0.3),
-                              borderRadius: BorderRadius.only(
-                                topLeft:
-                                    Radius.circular(CustomTheme.borderRadius),
-                                topRight:
-                                    Radius.circular(CustomTheme.borderRadius),
-                              ),
-                            ),
-                            child: Text("Lower"),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+              MainContent(scrollController: _scrollController)
             ],
           ),
         ),
