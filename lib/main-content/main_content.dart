@@ -1,71 +1,55 @@
 import 'package:flutter/material.dart';
+import 'package:my_responsive_resume/contact-card/contact_card.dart';
+import 'package:my_responsive_resume/main-content/widgets/about_me.dart';
+import 'package:my_responsive_resume/main-content/widgets/custom_content_card.dart';
+import 'package:my_responsive_resume/main-content/widgets/education_n_experience.dart';
+import 'package:my_responsive_resume/main-content/widgets/skills.dart';
+import 'package:my_responsive_resume/main-content/widgets/what_im_doing.dart';
+import 'package:my_responsive_resume/responsive.dart';
 
 import '../constants.dart';
 
+const List<Widget> contents = [
+  AboutMe(),
+  WhatImDoing(),
+  EducationNExperience(),
+  Skills(),
+];
+
 class MainContent extends StatelessWidget {
-  const MainContent({Key? key, required this.scrollController})
-      : super(key: key);
-  final ScrollController scrollController;
+  const MainContent({Key? key, required this.containerWidth}) : super(key: key);
+  //final ScrollController scrollController;
+  final double containerWidth;
 
   @override
   Widget build(BuildContext context) {
-    return ScrollConfiguration(
-      behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
-      child: SingleChildScrollView(
-        padding:
-            const EdgeInsets.symmetric(vertical: CustomTheme.verticalMargin),
-        controller: scrollController,
-        primary: false,
-        child: Row(
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Container(
-                  width: 900,
-                  height: 160,
-                  decoration: BoxDecoration(
-                    color: CustomTheme.secondaryText.withOpacity(0.3),
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(CustomTheme.borderRadius),
-                      topRight: Radius.circular(CustomTheme.borderRadius),
-                    ),
-                  ),
-                  child: Text("Lower"),
-                ),
-                Container(
-                  width: 900,
-                  height: 500,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(CustomTheme.borderRadius),
-                      topRight: Radius.circular(CustomTheme.borderRadius),
-                    ),
-                  ),
-                  child: Center(
-                    child: Text(scrollController.hasClients
-                        ? scrollController.offset.toString()
-                        : "0"),
-                  ),
-                ),
-                Container(
-                  width: 900,
-                  height: 500,
-                  decoration: BoxDecoration(
-                    color: CustomTheme.secondaryText.withOpacity(0.3),
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(CustomTheme.borderRadius),
-                      topRight: Radius.circular(CustomTheme.borderRadius),
-                    ),
-                  ),
-                  child: Text("Lower"),
-                ),
-              ],
-            ),
-          ],
+    return Padding(
+      padding: EdgeInsets.symmetric(
+          vertical: Responsive.isDesktop(context)
+              ? CustomTheme.verticalMargin
+              : CustomTheme.padding * 2,
+          horizontal: CustomTheme.padding),
+      child: Container(
+        constraints: BoxConstraints(maxWidth: containerWidth),
+        clipBehavior: Clip.hardEdge,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(CustomTheme.borderRadius),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: _buildContents(),
         ),
       ),
     );
+  }
+
+  List<Widget> _buildContents() {
+    return contents.asMap().entries.map((entry) {
+      int idx = entry.key;
+      Widget val = entry.value;
+
+      return CustomContentCard(index: idx, child: val);
+    }).toList();
   }
 }

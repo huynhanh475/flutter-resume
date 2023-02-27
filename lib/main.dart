@@ -37,13 +37,39 @@ class MyApp extends StatelessWidget {
         //     surface: CustomTheme.secondaryBackground,
         //     onSurface: CustomTheme.secondaryText),
         shadowColor: CustomTheme.shadowColor,
-        textTheme: GoogleFonts.archivoTextTheme()
+        // textTheme: GoogleFonts.archivoTextTheme()
+        //     // .copyWith(
+        //     //   headlineSmall:
+        //     //       const TextStyle(fontWeight: FontWeight.bold, fontSize: 24.0),
+        //     //   headlineMedium:
+        //     //       const TextStyle(fontWeight: FontWeight.bold, fontSize: 28.0),
+        //     //   headlineLarge:
+        //     //       const TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
+        //     //   bodyMedium: const TextStyle(
+        //     //     fontSize: 15.0,
+        //     //   ),
+        //     // )
+        //     .apply(
+        //   //fontFamily: GoogleFonts.archivo().fontFamily,
+        //   bodyColor: CustomTheme.primaryText,
+        //   displayColor: CustomTheme.primaryText,
+        // ),
+        textTheme: Theme.of(context)
+            .textTheme
             .copyWith(
-              bodyMedium: const TextStyle(
-                fontSize: 15.0,
+              headlineSmall:
+                  const TextStyle(fontWeight: FontWeight.bold, fontSize: 24.0),
+              headlineMedium:
+                  const TextStyle(fontWeight: FontWeight.bold, fontSize: 28.0),
+              headlineLarge:
+                  const TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
+              titleMedium: const TextStyle(
+                fontWeight: FontWeight.bold,
               ),
+              bodyMedium: const TextStyle(fontSize: 15.0, height: 1.6),
             )
             .apply(
+              fontFamily: GoogleFonts.archivo().fontFamily,
               bodyColor: CustomTheme.primaryText,
               displayColor: CustomTheme.primaryText,
             ),

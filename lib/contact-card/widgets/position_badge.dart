@@ -7,7 +7,6 @@ class PositionBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(CustomTheme.padding * 3 / 4),
       decoration: BoxDecoration(
           color: Theme.of(context).colorScheme.secondaryContainer,
           borderRadius: BorderRadius.circular(CustomTheme.borderRadius)),

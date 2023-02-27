@@ -10,17 +10,21 @@ class InfoTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Icon(
-          iconData,
-          size: 18.0,
-        ),
-        const SizedBox(width: CustomTheme.padding),
-        Text(
-          text,
-        )
-      ],
+    return Container(
+      width: 250.0,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(
+            iconData,
+            size: 20.0,
+          ),
+          const SizedBox(width: CustomTheme.padding),
+          Text(
+            text,
+          )
+        ],
+      ),
     );
   }
 }
