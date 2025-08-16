@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:my_responsive_resume/constants.dart';
 
 import 'case_item.dart';
@@ -16,10 +15,10 @@ class WhatImDoing extends StatelessWidget {
           "What I'm Doing",
           style: Theme.of(context).textTheme.headlineSmall,
         ),
-        SizedBox(
+        const SizedBox(
           height: CustomTheme.padding,
         ),
-        Row(
+        const Row(
           children: [
             Expanded(
               child: CaseItem(

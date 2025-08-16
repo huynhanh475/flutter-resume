@@ -34,7 +34,7 @@ class LowerInfoContainer extends StatelessWidget {
             ),
             InfoTile(
               iconData: Icons.place_outlined,
-              text: "Binh Duong, Vietnam",
+              text: "Ho Chi Minh, Vietnam",
             ),
             InfoTile(
               iconData: Icons.mail_outline_rounded,

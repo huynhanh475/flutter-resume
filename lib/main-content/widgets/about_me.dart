@@ -24,7 +24,7 @@ class AboutMe extends StatelessWidget {
           width: 60.0,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(6.0),
-            color: Theme.of(context).primaryColor,
+            color: const Color(0xFF304CFD),
           ),
         ),
         const Text(

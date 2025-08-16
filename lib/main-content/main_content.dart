@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:my_responsive_resume/contact-card/contact_card.dart';
 import 'package:my_responsive_resume/main-content/widgets/about_me.dart';
 import 'package:my_responsive_resume/main-content/widgets/custom_content_card.dart';
+import 'package:my_responsive_resume/main-content/widgets/education.dart';
 import 'package:my_responsive_resume/main-content/widgets/education_n_experience.dart';
 import 'package:my_responsive_resume/main-content/widgets/skills.dart';
-import 'package:my_responsive_resume/main-content/widgets/what_im_doing.dart';
+// import 'package:my_responsive_resume/main-content/widgets/what_im_doing.dart';
 import 'package:my_responsive_resume/responsive.dart';
 
 import '../constants.dart';
 
 const List<Widget> contents = [
   AboutMe(),
-  WhatImDoing(),
+  // WhatImDoing(),
   EducationNExperience(),
+  Education(),
   Skills(),
 ];
 
@@ -30,6 +31,7 @@ class MainContent extends StatelessWidget {
               : CustomTheme.padding * 2,
           horizontal: CustomTheme.padding),
       child: Container(
+        padding: const EdgeInsets.only(bottom: CustomTheme.padding * 2),
         constraints: BoxConstraints(maxWidth: containerWidth),
         clipBehavior: Clip.hardEdge,
         decoration: BoxDecoration(

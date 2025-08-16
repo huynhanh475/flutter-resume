@@ -15,7 +15,7 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   final _scrollController = ScrollController();
   final double _contactCardWidth = 280;
-  final double _mainContentWidth = 900;
+  final double _mainContentWidth = 800;
 
   @override
   Widget build(BuildContext context) {

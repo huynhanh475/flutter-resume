@@ -9,19 +9,19 @@ class CustomContentCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (index.isEven) {
+    // if (index.isEven) {
       return Padding(
-        padding: const EdgeInsets.all(CustomTheme.padding * 2),
+        padding: const EdgeInsets.only(left: CustomTheme.padding * 2, right: CustomTheme.padding * 2, top: CustomTheme.padding * 2),
         child: child,
       );
-    }
+    // }
 
-    return Container(
-      color: Theme.of(context).colorScheme.secondaryContainer,
-      child: Padding(
-        padding: const EdgeInsets.all(CustomTheme.padding * 2),
-        child: child,
-      ),
-    );
+    // return Container(
+    //   color: Theme.of(context).colorScheme.secondaryContainer,
+    //   child: Padding(
+    //     padding: const EdgeInsets.all(CustomTheme.padding * 2),
+    //     child: child,
+    //   ),
+    // );
   }
 }

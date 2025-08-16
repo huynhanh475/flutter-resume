@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:my_responsive_resume/contact-card/widgets/info_tile.dart';
 import 'package:my_responsive_resume/contact-card/widgets/lower_info_container.dart';
 import 'package:my_responsive_resume/contact-card/widgets/position_badge.dart';
 import 'package:my_responsive_resume/contact-card/widgets/avatar.dart';

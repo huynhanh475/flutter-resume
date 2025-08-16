@@ -1,30 +1,15 @@
 import 'package:flutter/material.dart';
 
-final List<Map<String, dynamic>> experience = [
+final List<Map<String, dynamic>> education = [
   {
-    "title": "Software Engineer",
-    "company": "TarotX",
-    "date": "2024-2025",
-    "description": """I worked on the TarotX team and helped to improve the TarotX for the users.
-- I also worked on the TarotX team and helped to improve the TarotX for the users.
-- I also worked on the TarotX team and helped to improve the TarotX for the users.""",
-  },
-  {
-    "title": "Software Engineer",
-    "company": "SDConnect",
-    "date": "2022-2024",
-    "description": "I worked on the SDConnect team and helped to improve the SDConnect for the users.",
-  },
-  {
-    "title": "Web Developer Intern",
-    "company": "Emolyze Tech",
-    "date": "2021-2022",
-    "description": "I worked on the Emolyze Tech team and helped to improve the Emolyze Tech for the users.",
+    "title": "Bachelor of Science in Computer Science",
+    "school": "Vietnamese-German University",
+    "date": "2019-2023",
     "isLast": true,
   },
 ];
-class EducationNExperience extends StatelessWidget {
-  const EducationNExperience({Key? key}) : super(key: key);
+class Education extends StatelessWidget {
+  const Education({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +17,7 @@ class EducationNExperience extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "Experience",
+          "Education",
           style: Theme.of(context).textTheme.headlineSmall,
         ),
         const SizedBox(height: 30),
@@ -40,7 +25,7 @@ class EducationNExperience extends StatelessWidget {
           padding: const EdgeInsets.only(left: 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: experience.map((e) => Stack(
+            children: education.map((e) => Stack(
               clipBehavior: Clip.none,
               children: [
                 Container(
@@ -59,11 +44,12 @@ class EducationNExperience extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        Text(e["school"] ?? ""),
                         Text(e["date"] ?? "", style: const TextStyle(color: Color(0xFF8697A8)),),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 8),
-                          child: Text(e["description"] ?? ""),
-                        ),
+                        // Padding(
+                        //   padding: const EdgeInsets.only(top: 8),
+                        //   child: Text(e["description"] ?? ""),
+                        // ),
                       ],
                     ),
                   ),
@@ -90,7 +76,7 @@ class EducationNExperience extends StatelessWidget {
                 Positioned(
                   top: -12,
                   left: 25,
-                  child: Text("${e["title"]} | ${e["company"] ?? ""}", style: Theme.of(context).textTheme.titleMedium),
+                  child: Text(e["title"], style: Theme.of(context).textTheme.titleMedium),
                 ),
               ],
             )).toList(),
