@@ -2,24 +2,37 @@ import 'package:flutter/material.dart';
 
 final List<Map<String, dynamic>> experience = [
   {
-    "title": "Software Engineer",
-    "company": "TarotX",
+    "title": "Founding Engineer",
+    "company": "TarotX.vn",
     "date": "2024-2025",
-    "description": """I worked on the TarotX team and helped to improve the TarotX for the users.
-- I also worked on the TarotX team and helped to improve the TarotX for the users.
-- I also worked on the TarotX team and helped to improve the TarotX for the users.""",
+    "description": """TarotX.vn is Vietnam's pioneering digital platform for online Tarot sessions, enabling users to connect with verified Tarot readers, book flexible appointments, and experience interactive, multimedia readings.
+
+Key Responsibilities & Achievements:
+
+•    Full-stack architecture design & implementation: Developed the entire system from scratch, covering both frontend and backend within a monorepo architecture using pnpm, ensuring consistency and maintainability.
+•    Frontend development: Built responsive and high-performance user interfaces with React.js and Next.js, enabling seamless booking, session participation, and real-time reader–customer interactions.
+•    Backend development: Designed and deployed scalable Express.js APIs, managing business logic, authentication, and secure session handling.
+•    Database management: Leveraged MongoDB for flexible, high-performance storage of user profiles, session data, booking records, and AI-powered Tarot insights.
+•    AI-powered features: Integrated digital Tarot reading sessions enhanced by AI, providing customers with engaging, semi-automated experiences alongside live reader sessions.
+•    Product lifecycle ownership: Independently managed the complete development pipeline — from system design, coding, and testing to deployment and monitoring.""",
+    // "techStacks": ["TypeScript", "React.js", "Next.js", "Express.js", "MongoDB", "Tailwind CSS"],
   },
   {
-    "title": "Software Engineer",
-    "company": "SDConnect",
+    "title": "Freelance Software Engineer",
+    "company": "YesSirStudio",
     "date": "2022-2024",
-    "description": "I worked on the SDConnect team and helped to improve the SDConnect for the users.",
+    "description": """- """,
+    // "techStacks": ["TypeScript", "React.js", "Next.js", "Express.js", "MongoDB", "Tailwind CSS"],
   },
   {
     "title": "Web Developer Intern",
     "company": "Emolyze Tech",
     "date": "2021-2022",
-    "description": "I worked on the Emolyze Tech team and helped to improve the Emolyze Tech for the users.",
+    "description": """Main responsibilities:
+• Develop features from frontend to backend following designs.
+• Maintain code quality & fix bugs.
+• Write documents.""",
+    // "techStacks": ["TypeScript", "React.js", "Express.js", "MySQL", "Flutter"],
     "isLast": true,
   },
 ];
