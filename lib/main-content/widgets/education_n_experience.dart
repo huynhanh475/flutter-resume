@@ -4,30 +4,24 @@ final List<Map<String, dynamic>> experience = [
   {
     "title": "Founding Engineer",
     "company": "TarotX.vn",
-    "date": "2024-2025",
+    "date": "Aug 2024 - Present",
+    "techStacks": ["TypeScript", "React.js", "Next.js", "Express.js", "MongoDB", "Tailwind CSS", "OpenAI"],
     "description": """TarotX.vn is Vietnam's pioneering digital platform for online Tarot sessions, enabling users to connect with verified Tarot readers, book flexible appointments, and experience interactive, multimedia readings.
 
 Key Responsibilities & Achievements:
 
-•    Full-stack architecture design & implementation: Developed the entire system from scratch, covering both frontend and backend within a monorepo architecture using pnpm, ensuring consistency and maintainability.
-•    Frontend development: Built responsive and high-performance user interfaces with React.js and Next.js, enabling seamless booking, session participation, and real-time reader–customer interactions.
-•    Backend development: Designed and deployed scalable Express.js APIs, managing business logic, authentication, and secure session handling.
-•    Database management: Leveraged MongoDB for flexible, high-performance storage of user profiles, session data, booking records, and AI-powered Tarot insights.
-•    AI-powered features: Integrated digital Tarot reading sessions enhanced by AI, providing customers with engaging, semi-automated experiences alongside live reader sessions.
-•    Product lifecycle ownership: Independently managed the complete development pipeline — from system design, coding, and testing to deployment and monitoring.""",
+• Built the entire platform end-to-end (frontend + backend) as a solo engineer.  
+• Developed frontend with React.js & Next.js; backend with Express.js; monorepo with pnpm; database with MongoDB.  
+• Implemented features such as AI-powered Tarot readings, verified reader profiles, and flexible online booking.  
+• Designed, tested, deployed, and maintained the full system independently.  
+• Established a scalable technical foundation for future business growth.""",
     // "techStacks": ["TypeScript", "React.js", "Next.js", "Express.js", "MongoDB", "Tailwind CSS"],
   },
   {
-    "title": "Freelance Software Engineer",
-    "company": "YesSirStudio",
-    "date": "2022-2024",
-    "description": """- """,
-    // "techStacks": ["TypeScript", "React.js", "Next.js", "Express.js", "MongoDB", "Tailwind CSS"],
-  },
-  {
-    "title": "Web Developer Intern",
+    "title": "Full-Stack Web Developer",
     "company": "Emolyze Tech",
-    "date": "2021-2022",
+    "date": "Sep 2021 - May 2024",
+    "techStacks": ["TypeScript", "React.js", "Next.js", "Express.js", "MySQL"],
     "description": """Main responsibilities:
 • Develop features from frontend to backend following designs.
 • Maintain code quality & fix bugs.
@@ -73,6 +67,18 @@ class EducationNExperience extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(e["date"] ?? "", style: const TextStyle(color: Color(0xFF8697A8)),),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 8),
+                          child: RichText(
+                            text: TextSpan(
+                              style: Theme.of(context).textTheme.bodyMedium,
+                              children: [
+                                TextSpan(text: "Technologies: ", style: const TextStyle(fontWeight: FontWeight.bold)),
+                                TextSpan(text: e["techStacks"]?.join(", ") ?? "")
+                              ],
+                            ),
+                          ),
+                        ),
                         Padding(
                           padding: const EdgeInsets.only(top: 8),
                           child: Text(e["description"] ?? ""),

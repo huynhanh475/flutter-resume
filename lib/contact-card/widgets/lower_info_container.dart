@@ -19,31 +19,47 @@ class LowerInfoContainer extends StatelessWidget {
       ),
       child: Padding(
         padding: const EdgeInsets.all(CustomTheme.padding * 2),
-        child: Wrap(
-          alignment: Responsive.isDesktop(context)
-              ? WrapAlignment.start
-              : WrapAlignment.spaceEvenly,
-          crossAxisAlignment: WrapCrossAlignment.center,
-          runAlignment: WrapAlignment.spaceEvenly,
-          spacing: CustomTheme.padding,
-          runSpacing: CustomTheme.padding / 2,
-          children: const [
-            InfoTile(
-              iconData: Icons.date_range_outlined,
-              text: "December 3rd, 2001",
+        child: Column( 
+          children: [
+            Wrap(
+              alignment: Responsive.isDesktop(context)
+                  ? WrapAlignment.start
+                  : WrapAlignment.spaceEvenly,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              runAlignment: WrapAlignment.spaceEvenly,
+              spacing: CustomTheme.padding,
+              runSpacing: CustomTheme.padding / 2,
+              children: [
+                InfoTile(
+                  iconData: Icons.date_range_outlined,
+                  text: "December 3rd, 2001",
+                ),
+                InfoTile(
+                  iconData: Icons.place_outlined,
+                  text: "Ho Chi Minh, Vietnam",
+                ),
+                InfoTile(
+                  iconData: Icons.mail_outline_rounded,
+                  text: "huynhanh475@gmail.com",
+                ),
+                InfoTile(
+                  iconData: Icons.phone_iphone_outlined,
+                  text: "+84 829 090 027",
+                ),
+                
+              ],
             ),
-            InfoTile(
-              iconData: Icons.place_outlined,
-              text: "Ho Chi Minh, Vietnam",
+            Padding(
+              padding: EdgeInsets.only(top: CustomTheme.padding, bottom: CustomTheme.padding/2),
+              child: Text("Languages", style: Theme.of(context).textTheme.titleMedium),
             ),
-            InfoTile(
-              iconData: Icons.mail_outline_rounded,
-              text: "huynhanh475@gmail.com",
-            ),
-            InfoTile(
-              iconData: Icons.phone_iphone_outlined,
-              text: "+84 829 090 027",
-            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text("• English: IELTS 7.0", style: Theme.of(context).textTheme.bodyMedium),
+                Text("• Vietnamese: Native", style: Theme.of(context).textTheme.bodyMedium),
+              ],
+            )
           ],
         ),
       ),

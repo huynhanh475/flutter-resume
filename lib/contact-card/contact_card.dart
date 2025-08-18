@@ -8,7 +8,7 @@ import 'widgets/contact_links.dart';
 import 'widgets/name_text.dart';
 
 class ContactCard extends StatelessWidget {
-  const ContactCard({Key? key, this.cardWidth = 280.0}) : super(key: key);
+  const ContactCard({Key? key, this.cardWidth = 300.0}) : super(key: key);
   //final verticalFlag = CustomTheme.imageSize / 2 + CustomTheme.padding * 3 / 2;
 
   final double cardWidth;

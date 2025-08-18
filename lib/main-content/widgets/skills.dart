@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 
 final List<String> skills = [
-  "ReactJS",
-  "NextJS",
-  "Flutter",
-  "NodeJS",
-  "Express",
-  "Git",
-  "GitHub Actions",
-  "AWS",
+  "JavaScript / Typescript (React + Node).",
+  "Flutter (Chart language).",
+  "AWS, GCP.",
+  "Git / CI, CD.",
 ];
 
 class Skills extends StatelessWidget {

@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:my_responsive_resume/constants.dart';
 import 'package:my_responsive_resume/responsive.dart';
 
+const String aboutMeText = """I'm a software engineer with a strong focus on building reliable, scalable systems from the ground up. Over the past few years, I've designed and shipped products across frontend, backend, and mobile, balancing speed of execution with long-term maintainability.
+
+I thrive at the intersection of system design and execution: whether it's scaling APIs, structuring data flows, or optimizing user experiences. My goal is to keep pushing technical boundaries while building products that actually get used.""";
+
 class AboutMe extends StatelessWidget {
   const AboutMe({Key? key}) : super(key: key);
 
@@ -27,14 +31,13 @@ class AboutMe extends StatelessWidget {
             color: const Color(0xFF304CFD),
           ),
         ),
-        const Text(
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."),
-        const SizedBox(
-          height: CustomTheme.padding,
-        ),
-        const Text(
-          "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.",
-        ),
+        const Text(aboutMeText),
+        // const SizedBox(
+        //   height: CustomTheme.padding,
+        // ),
+        // const Text(
+        //   "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.",
+        // ),
       ],
     );
   }

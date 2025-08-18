@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Anh Huynh\'s Resume',
+      title: 'Hi, I\'m Anh Huynh',
       theme: ThemeData.light().copyWith(
         primaryColor: CustomTheme.primaryColor,
         colorScheme: ColorScheme.light(
