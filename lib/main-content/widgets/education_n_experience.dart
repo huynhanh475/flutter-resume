@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 final List<Map<String, dynamic>> experience = [
   {
@@ -17,8 +18,11 @@ Key Responsibilities & Achievements:
 • Established a scalable technical foundation for future business growth.""",
     "gallery": [
       "https://placehold.co/600x400.png",
-      "https://placehold.co/600x400.png",
-      "https://placehold.co/600x400.png",
+      "https://placehold.co/600x500.png",
+      "https://placehold.co/600x600.png",
+      "https://placehold.co/600x700.png",
+      "https://placehold.co/600x800.png",
+      "https://placehold.co/600x900.png",
     ],
   },
   {
@@ -56,41 +60,107 @@ Key Responsibilities & Achievements:
 class EducationNExperience extends StatelessWidget {
   const EducationNExperience({Key? key}) : super(key: key);
 
-  void _showImageDialog(BuildContext context, String imageUrl) {
+  void _showImageDialog(BuildContext context, List<String> images, int initialIndex) {
+    if (images.isEmpty) return;
+
     showDialog(
       context: context,
       barrierDismissible: true,
       barrierColor: Colors.black.withOpacity(0.85),
       builder: (dialogContext) {
-        return Material(
-          color: Colors.transparent,
-          child: Stack(
-            children: [
-              Positioned.fill(
-                child: GestureDetector(
-                  onTap: () => Navigator.of(dialogContext).pop(),
-                  child: Container(color: Colors.transparent),
+        int currentIndex = initialIndex;
+
+        void showNext(StateSetter setState) {
+          if (images.length < 2) return;
+          setState(() {
+            currentIndex = (currentIndex + 1) % images.length;
+          });
+        }
+
+        void showPrevious(StateSetter setState) {
+          if (images.length < 2) return;
+          setState(() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+          });
+        }
+
+        return StatefulBuilder(
+          builder: (context, setState) {
+            return Material(
+              color: Colors.transparent,
+              child: Focus(
+                autofocus: true,
+                onKey: (node, event) {
+                  if (event is RawKeyDownEvent) {
+                    if (event.logicalKey == LogicalKeyboardKey.arrowRight) {
+                      showNext(setState);
+                      return KeyEventResult.handled;
+                    }
+                    if (event.logicalKey == LogicalKeyboardKey.arrowLeft) {
+                      showPrevious(setState);
+                      return KeyEventResult.handled;
+                    }
+                  }
+                  return KeyEventResult.ignored;
+                },
+                child: Stack(
+                  children: [
+                    Positioned.fill(
+                      child: GestureDetector(
+                        onTap: () => Navigator.of(dialogContext).pop(),
+                        child: Container(color: Colors.transparent),
+                      ),
+                    ),
+                    Center(
+                      child: InteractiveViewer(
+                        clipBehavior: Clip.none,
+                        child: Image.network(
+                          images[currentIndex],
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ),
+                    if (images.length > 1)
+                      Positioned(
+                        left: 24,
+                        top: 0,
+                        bottom: 0,
+                        child: Center(
+                          child: IconButton(
+                            onPressed: () => showPrevious(setState),
+                            iconSize: 36,
+                            color: Colors.white,
+                            icon: const Icon(Icons.chevron_left),
+                          ),
+                        ),
+                      ),
+                    if (images.length > 1)
+                      Positioned(
+                        right: 24,
+                        top: 0,
+                        bottom: 0,
+                        child: Center(
+                          child: IconButton(
+                            onPressed: () => showNext(setState),
+                            iconSize: 36,
+                            color: Colors.white,
+                            icon: const Icon(Icons.chevron_right),
+                          ),
+                        ),
+                      ),
+                    Positioned(
+                      top: 24,
+                      right: 24,
+                      child: IconButton(
+                        onPressed: () => Navigator.of(dialogContext).pop(),
+                        icon: const Icon(Icons.close, color: Colors.white, size: 28),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              Center(
-                child: InteractiveViewer(
-                  clipBehavior: Clip.none,
-                  child: Image.network(
-                    imageUrl,
-                    fit: BoxFit.contain,
-                  ),
-                ),
-              ),
-              Positioned(
-                top: 24,
-                right: 24,
-                child: IconButton(
-                  onPressed: () => Navigator.of(dialogContext).pop(),
-                  icon: const Icon(Icons.close, color: Colors.white, size: 28),
-                ),
-              ),
-            ],
-          ),
+            );
+          },
         );
       },
     );
@@ -153,22 +223,27 @@ class EducationNExperience extends StatelessWidget {
                             Wrap(
                               spacing: 12,
                               runSpacing: 12,
-                              children: gallery!
-                                  .map(
-                                    (url) => GestureDetector(
-                                      onTap: () => _showImageDialog(context, url),
-                                      child: ClipRRect(
-                                        borderRadius: BorderRadius.circular(8),
-                                        child: Image.network(
-                                          url,
-                                          width: 150,
-                                          height: 100,
-                                          fit: BoxFit.cover,
+                              children: List.generate(
+                                gallery!.length,
+                                (index) {
+                                  final url = gallery[index];
+                                  return MouseRegion(
+                                      cursor: SystemMouseCursors.click,
+                                      child: GestureDetector(
+                                        onTap: () => _showImageDialog(context, gallery, index),
+                                        child: ClipRRect(
+                                          borderRadius: BorderRadius.circular(8),
+                                          child: Image.network(
+                                            url,
+                                            width: 150,
+                                            height: 100,
+                                            fit: BoxFit.cover,
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                  )
-                                  .toList(),
+                                    );
+                                },
+                              ),
                             ),
                           ],
                         ],
