@@ -6,7 +6,7 @@ final List<Map<String, dynamic>> experience = [
     "title": "Founding Engineer",
     "company": "AI Recruiter",
     "date": "Aug 2025 - Present",
-    "techStacks": ["TypeScript", "React.js", "Next.js", "Express.js", "Socket.IO", "MongoDB", "Tailwind CSS", "OpenAI", "Puppeteer-core", "pnpm workspace", "turbo repo"],
+    "techStacks": ["TypeScript", "React.js", "Next.js", "Express.js", "Socket.IO", "MongoDB", "Tailwind CSS", "Zustand", "OpenAI", "Puppeteer-core", "pnpm workspace", "turbo repo"],
     "description": """AI Recruiter Platform — architected a monorepo of coordinated Node.js services, real-time automation workers, and React control panels that automate sourcing and outreach for recruiting teams.
 
 • Drove the TypeScript/Express backend, wiring MongoDB, Redis, and Socket.IO to serve secure REST endpoints plus live change streams for jobs, candidates, and automation clients, while bootstrapping AI services and shared data models across apps.
@@ -24,7 +24,7 @@ final List<Map<String, dynamic>> experience = [
   {
     "title": "Founding Engineer",
     "company": "TarotX.vn",
-    "date": "Aug 2024 - Present",
+    "date": "Aug 2024 - July 2025",
     "techStacks": ["TypeScript", "React.js", "Next.js", "Express.js", "MongoDB", "Tailwind CSS", "OpenAI"],
     "description": """TarotX.vn is Vietnam's pioneering digital platform for online Tarot sessions, enabling users to connect with verified Tarot readers, book flexible appointments, and experience interactive, multimedia readings.
 
