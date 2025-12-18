@@ -29,7 +29,7 @@ class LowerInfoContainer extends StatelessWidget {
               runAlignment: WrapAlignment.spaceEvenly,
               spacing: CustomTheme.padding,
               runSpacing: CustomTheme.padding / 2,
-              children: [
+              children: const [
                 InfoTile(
                   iconData: Icons.date_range_outlined,
                   text: "December 3rd, 2001",
@@ -50,7 +50,7 @@ class LowerInfoContainer extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: EdgeInsets.only(top: CustomTheme.padding, bottom: CustomTheme.padding/2),
+              padding: const EdgeInsets.only(top: CustomTheme.padding, bottom: CustomTheme.padding/2),
               child: Text("Languages", style: Theme.of(context).textTheme.titleMedium),
             ),
             Column(

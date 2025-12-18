@@ -32,7 +32,7 @@ class CaseItem extends StatelessWidget {
               width: 40.0,
               height: 40.0,
             ),
-            SizedBox(
+            const SizedBox(
               width: CustomTheme.padding,
             ),
             Flexible(
@@ -43,7 +43,7 @@ class CaseItem extends StatelessWidget {
                     title,
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: CustomTheme.padding / 2,
                   ),
                   Text(

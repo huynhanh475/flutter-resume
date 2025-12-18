@@ -8,9 +8,9 @@ class ContactLinks extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: const [
+      children: [
         SocialIcon(
             iconData: FontAwesomeIcons.github,
             url: "https://github.com/huynhanh475"),

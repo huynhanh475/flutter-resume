@@ -60,14 +60,14 @@ class Education extends StatelessWidget {
                   child: Container(
                     width: 10,
                     height: 10,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       shape: BoxShape.circle,
                       color: Color.fromRGBO(48, 76, 253, 1),
                       boxShadow: [
                         BoxShadow(
                           color: Color.fromRGBO(48, 76, 253, 0.25),
                           spreadRadius: 3,
-                          offset: const Offset(0, 0),
+                          offset: Offset(0, 0),
                         ),
                       ],
                     ),
