@@ -6,23 +6,19 @@ final List<Map<String, dynamic>> experience = [
     "title": "Founding Engineer",
     "company": "AI Recruiter",
     "date": "Aug 2025 - Present",
-    "techStacks": ["TypeScript", "React.js", "Next.js", "Express.js", "MongoDB", "Tailwind CSS", "OpenAI"],
-    "description": """TarotX.vn is Vietnam's pioneering digital platform for online Tarot sessions, enabling users to connect with verified Tarot readers, book flexible appointments, and experience interactive, multimedia readings.
+    "techStacks": ["TypeScript", "React.js", "Next.js", "Express.js", "Socket.IO", "MongoDB", "Tailwind CSS", "OpenAI", "Puppeteer-core", "pnpm workspace", "turbo repo"],
+    "description": """AI Recruiter Platform — architected a monorepo of coordinated Node.js services, real-time automation workers, and React control panels that automate sourcing and outreach for recruiting teams.
 
-Key Responsibilities & Achievements:
-
-• Built the entire platform end-to-end (frontend + backend) as a solo engineer.  
-• Developed frontend with React.js & Next.js; backend with Express.js; monorepo with pnpm; database with MongoDB.  
-• Implemented features such as AI-powered Tarot readings, verified reader profiles, and flexible online booking.  
-• Designed, tested, deployed, and maintained the full system independently.  
-• Established a scalable technical foundation for future business growth.""",
+• Drove the TypeScript/Express backend, wiring MongoDB, Redis, and Socket.IO to serve secure REST endpoints plus live change streams for jobs, candidates, and automation clients, while bootstrapping AI services and shared data models across apps.
+• Implemented the orchestration service that queues searches, scrapes, and engagement tasks, balances load across automation clients, and feeds recruiter/candidate conversations back through Grok-powered responses.
+• Delivered recruiter- and operations-facing dashboards in React/Vite with Zustand state, Tailwind-based UI kit, and WebSocket subscriptions so operators can assign client machines, monitor pipelines, and trigger outreach instantly.
+• Embedded xAI Grok flows to generate recruiter replies and job-specific search keywords, plus DigitalOcean Spaces integrations for asset storage and secure JWT/Redis session management.
+• Coordinated Puppeteer-based relay agents that drive LinkedIn Recruiter sessions from saved Chrome profiles, sync thread history, and auto-respond via orchestrator WebSockets.
+• Tooling: pnpm/turbo monorepo, Bun & tsx for DX, pm2 deploy scripts, lint/TS configs shared across workspaces.""",
     "gallery": [
-      "https://placehold.co/600x400.png",
-      "https://placehold.co/600x500.png",
-      "https://placehold.co/600x600.png",
-      "https://placehold.co/600x700.png",
-      "https://placehold.co/600x800.png",
-      "https://placehold.co/600x900.png",
+      "assets/ai-recruiter-1.jpeg",
+      "assets/ai-recruiter-2.jpeg",
+      "assets/ai-recruiter-3.jpeg",
     ],
   },
   {
@@ -40,15 +36,19 @@ Key Responsibilities & Achievements:
 • Designed, tested, deployed, and maintained the full system independently.  
 • Established a scalable technical foundation for future business growth.""",
     "gallery": [
-      "https://placehold.co/600x400/png",
-      "https://placehold.co/600x400.png",
+      "assets/tarotx-1.gif",
+      "assets/tarotx-2.jpeg",
+      "assets/tarotx-3.jpeg",
+      "assets/tarotx-4.jpeg",
+      "assets/tarotx-5.jpeg",
+      "assets/tarotx-6.jpeg",
     ],
   },
   {
     "title": "Full-Stack Web Developer",
     "company": "Emolyze Tech",
     "date": "Sep 2021 - May 2024",
-    "techStacks": ["TypeScript", "React.js", "Next.js", "Express.js", "MySQL"],
+    "techStacks": ["TypeScript", "React.js", "Next.js", "Express.js", "MySQL", "AWS"],
     "description": """Main responsibilities:
 • Develop features from frontend to backend following designs.
 • Maintain code quality & fix bugs.
@@ -114,15 +114,21 @@ class EducationNExperience extends StatelessWidget {
                     Center(
                       child: InteractiveViewer(
                         clipBehavior: Clip.none,
-                        child: Image.network(
-                          images[currentIndex],
-                          fit: BoxFit.contain,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 60),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(16),
+                            child: Image.asset(
+                              images[currentIndex],
+                              fit: BoxFit.contain,
+                            ),
+                          ),
                         ),
                       ),
                     ),
                     if (images.length > 1)
                       Positioned(
-                        left: 24,
+                        left: 16,
                         top: 0,
                         bottom: 0,
                         child: Center(
@@ -136,7 +142,7 @@ class EducationNExperience extends StatelessWidget {
                       ),
                     if (images.length > 1)
                       Positioned(
-                        right: 24,
+                        right: 16,
                         top: 0,
                         bottom: 0,
                         child: Center(
@@ -149,8 +155,8 @@ class EducationNExperience extends StatelessWidget {
                         ),
                       ),
                     Positioned(
-                      top: 24,
-                      right: 24,
+                      top: 16,
+                      right: 16,
                       child: IconButton(
                         onPressed: () => Navigator.of(dialogContext).pop(),
                         icon: const Icon(Icons.close, color: Colors.white, size: 28),
@@ -233,7 +239,7 @@ class EducationNExperience extends StatelessWidget {
                                         onTap: () => _showImageDialog(context, gallery, index),
                                         child: ClipRRect(
                                           borderRadius: BorderRadius.circular(8),
-                                          child: Image.network(
+                                          child: Image.asset(
                                             url,
                                             width: 150,
                                             height: 100,
