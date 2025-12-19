@@ -3,18 +3,19 @@ import 'package:flutter/services.dart';
 
 final List<Map<String, dynamic>> experience = [
   {
-    "title": "Founding Engineer",
+    "title": "Senior Backend / Automation Engineer",
     "company": "AI Recruiter",
     "date": "Aug 2025 - Present",
-    "techStacks": ["TypeScript", "React.js", "Next.js", "Express.js", "Socket.IO", "MongoDB", "Tailwind CSS", "Zustand", "OpenAI", "Puppeteer-core", "pnpm workspace", "turbo repo"],
+    "techStacks": ["TypeScript", "React.js", "Next.js", "Express.js", "Socket.IO", "MongoDB", "Tailwind CSS", "Zustand", "OpenAI", "Puppeteer-core", "pnpm/Turborepo"],
     "description": """AI Recruiter Platform — architected a monorepo of coordinated Node.js services, real-time automation workers, and React control panels that automate sourcing and outreach for recruiting teams.
 
-• Drove the TypeScript/Express backend, wiring MongoDB, Redis, and Socket.IO to serve secure REST endpoints plus live change streams for jobs, candidates, and automation clients, while bootstrapping AI services and shared data models across apps.
-• Implemented the orchestration service that queues searches, scrapes, and engagement tasks, balances load across automation clients, and feeds recruiter/candidate conversations back through Grok-powered responses.
-• Delivered recruiter- and operations-facing dashboards in React/Vite with Zustand state, Tailwind-based UI kit, and WebSocket subscriptions so operators can assign client machines, monitor pipelines, and trigger outreach instantly.
-• Embedded xAI Grok flows to generate recruiter replies and job-specific search keywords, plus DigitalOcean Spaces integrations for asset storage and secure JWT/Redis session management.
-• Coordinated Puppeteer-based relay agents that drive LinkedIn Recruiter sessions from saved Chrome profiles, sync thread history, and auto-respond via orchestrator WebSockets.
-• Tooling: pnpm/turbo monorepo, Bun & tsx for DX, pm2 deploy scripts, lint/TS configs shared across workspaces.""",
+Key Responsibilities & Achievements:
+
+• Led backend architecture and orchestration for an AI recruiter automation platform, designing distributed scheduling and real-time coordination across automation clients, reducing manual recruiter effort and enabling scalable outreach.
+• Designed a fault-tolerant automation agent framework using Puppeteer and persisted browser profiles, enabling reliable session reuse, message synchronization, and automated engagement under production constraints.
+• Delivered low-latency APIs and event streams (Express, MongoDB, Redis, Socket.IO) supporting live recruiter-candidate workflows and AI-generated messaging at scale.
+• Embedded AI inference into core backend flows, generating recruiter replies and job-specific search signals that directly powered automated sourcing and engagement.
+• Drove cross-functional execution across backend services, automation agents, and React dashboards within a TypeScript monorepo, owning reliability, scalability, and system evolution end-to-end.""",
     "gallery": [
       "assets/ai-recruiter-1.jpeg",
       "assets/ai-recruiter-2.jpeg",
